@@ -1,2 +1,23 @@
-node_modules
+# Ignorar directorio node_modules generado por npm/yarn
+node_modules/
+
+# Ignorar archivos de compilación TypeScript
+*.js
+*.js.map
+
+# Ignorar archivos de compilación de TypeScript de la carpeta dist o build
+dist/
+build/
+
+# Ignorar archivos de configuración local (ejemplo: .env)
 .env
+
+# Ignorar archivos de registro y archivos de respaldo generados por IDEs o editores de texto
+*.log
+*.log.*
+*.backup
+*~
+
+# Ignorar archivos de caché o temporales
+.cache/
+.tmp/
