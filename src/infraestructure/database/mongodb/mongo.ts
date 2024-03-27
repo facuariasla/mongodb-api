@@ -11,7 +11,6 @@ export async function mongoDbConnection(): Promise<void> {
   } catch (error) {
     // Manejar el error
     console.error(`❌ Error trying to connect to MongoDB: ${error}`);
-    throw `❌ Error trying to connect to MongoDB: ${error}`;
   }
 }
 mongoDbConnection();

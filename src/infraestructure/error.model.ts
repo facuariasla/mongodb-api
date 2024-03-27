@@ -24,55 +24,59 @@ export class GenericError extends Error {
   }
 
   static SERVER_ERROR = new GenericError({
-    message: "INTERNAL SERVER OCURRED",
+    message: "Internal error occurred",
     httpCode: 500,
     internalCode: 1,
   });
   static REQUIRED_DATA = new GenericError({
-    message: "REQUIRED DATA",
+    message: "Required data",
     httpCode: 400,
     internalCode: 2,
     description: "Incomplete Data. Ensure all mandatory fields are provided.",
   });
 
   static AUTH_ERROR = new GenericError({
-    message: "NOT AUTHORIZED",
+    message: "Unauthorized",
     httpCode: 401,
     internalCode: 2,
+    description: "Unauthorized. Ensure your credentials are correct.",
+
   });
   static TOKEN_ERROR = new GenericError({
-    message: "INVALID TOKEN",
+    message: "Unauthorized",
     httpCode: 498,
     internalCode: 3,
+    description: "Check that your data is written correctly",
+
   });
   static ALREADY_EXISTS = new GenericError({
-    message: "DATA ALREADY EXISTS",
+    message: "Data already exists",
     httpCode: 403,
     internalCode: 4,
   });
   static NOT_FOUND = new GenericError({
-    message: "NOT FOUND",
+    message: "Data not found",
     httpCode: 404,
     internalCode: 5,
   });
   static INVALID_EMAIL = new GenericError({
-    message: "INVALID EMAIL",
+    message: "Invalid email",
     httpCode: 422,
     internalCode: 6,
   });
   static INVALID_DATE = new GenericError({
-    message: "INVALID DATE",
+    message: "Invalid date",
     httpCode: 422,
     internalCode: 6,
   });
   static WRONG_EMAIL_OR_PASSWORD = new GenericError({
-    message: "Correo o contraseña incorrecta",
+    message: "Wrong email or password",
     httpCode: 401,
     internalCode: 7,
     description: "Check that your data is written correctly",
   });
   static ROLE_ERROR = new GenericError({
-    message: "NOT AUTHORIZED",
+    message: "Unauthorized",
     httpCode: 403,
     internalCode: 8,
     description: "You do not have sufficient permissions.",
