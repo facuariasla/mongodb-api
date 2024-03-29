@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from "express";
 import { UserService } from "../services/user.service";
 import { User } from "../models/user.model";
 import { GenericError } from "../../infraestructure/error.model";
-import { ObjectId } from "mongodb";
 
 export class UserController {
   public static async create(
