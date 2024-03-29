@@ -85,6 +85,17 @@ export class UserService {
     throw GenericError.NOT_FOUND;
   }
 
+  public static async getById(id: string): Promise<User> {
+    const _id = new ObjectId(id);
+    // Si se actualizó correctamente, obtén y devuelve el usuario actualizado
+    const user = await user_collection.findOne({ _id });
+    if (user) {
+      return user as User;
+    }
+
+    throw GenericError.NOT_FOUND;
+  }
+
   public static async delete(id: string): Promise<number> {
     const _id = new ObjectId(id);
     const res = await user_collection.deleteOne({ _id });
