@@ -32,6 +32,7 @@ router.delete(
 router.post(
   "/mypets",
   AuthenticationMiddleware.allowIfLoggedIn,
+  AuthenticationMiddleware.grantAccess("pet", "create"),
   PetController.createOwn
 );
 

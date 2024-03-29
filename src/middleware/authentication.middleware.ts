@@ -10,7 +10,7 @@ const roleAccess:any = {
   },
   subscriber: {
     user: ['read', 'update'],
-    pet: ['createAny', 'read', 'update', 'delete'],
+    pet: ['create', 'read', 'update', 'delete'],
   },
 }
 export class AuthenticationMiddleware {
