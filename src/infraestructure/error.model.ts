@@ -81,4 +81,10 @@ export class GenericError extends Error {
     internalCode: 8,
     description: "You do not have sufficient permissions.",
   });
+  static DATA_MODIFICATION = new GenericError({
+    message: "Unauthorized",
+    httpCode: 403,
+    internalCode: 9,
+    description: "You do not have sufficient permissions to modify this data.",
+  });
 }

@@ -14,7 +14,7 @@ export const pet_collection = mongoDB.collection("pets");
 export class PetService {
   public static async create(data: Pet): Promise<Pet> {
     const now = new Date();
-    if(new Date(data.birthdate) > now) {
+    if (new Date(data.birthdate) > now) {
       throw GenericError.INVALID_DATE;
     }
     data = {
@@ -80,6 +80,15 @@ export class PetService {
     const res = await pet_collection.deleteOne({ _id });
     if (res.deletedCount > 0) {
       return res.deletedCount;
+    }
+    throw GenericError.NOT_FOUND;
+  }
+
+  public static async getById(id: string): Promise<Pet> {
+    const _id = new ObjectId(id);
+    const updatedUser = await pet_collection.findOne({ _id });
+    if (updatedUser) {
+      return updatedUser as Pet;
     }
     throw GenericError.NOT_FOUND;
   }

@@ -53,6 +53,13 @@ export class PetController {
     try {
       const body: Pet = req.body;
       const id = req.params.petId;
+      const userId = res.locals.loggedInUser._id;
+
+      const pet = await PetService.getById(id);
+      if (pet.ownerId !== userId) {
+        throw GenericError.DATA_MODIFICATION;
+      }
+
       const data = await PetService.update(id, body);
       res.status(200).json({ status: "ok", data });
     } catch (error) {
@@ -73,5 +80,4 @@ export class PetController {
       next(error);
     }
   }
-  
 }

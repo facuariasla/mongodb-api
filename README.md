@@ -16,6 +16,10 @@ Challenge.
 ### Usage
 * Run npm run dev to start the application.
 * Connect to the API using Postman on port 3001.
+## Authentication
+
+This API requires authentication using a Bearer token for each request. You should include the token in the Authorization header as follows:
+`Authorization: Bearer <your_token_here>`
 ### API Endpoints
 | HTTP Verbs | Endpoints | Action |
 | --- | --- | --- |
@@ -27,6 +31,7 @@ Challenge.
 | POST | /api/v1/pets | To create a new pet, associated to your account (user) |
 | PUT | /api/v1/pets/:petId | To update/edit a single pet |
 | DELETE | /api/v1/pets/:petId | To delete a single pet |
+
 
 ### Technologies Used
 * [NodeJS](https://nodejs.org/) This is a cross-platform runtime environment built on Chrome's V8 JavaScript engine used in running JavaScript codes on the server. It allows for installation and managing of dependencies and communication with databases.
