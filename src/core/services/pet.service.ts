@@ -38,8 +38,9 @@ export class PetService {
     limit: number,
     order: SortDirection = 1,
     orderBy: Sort,
-    search: {}
+    search: {},
   ): Promise<any> {
+
     const skip = (page - 1) * limit;
 
     const res = await pet_collection
