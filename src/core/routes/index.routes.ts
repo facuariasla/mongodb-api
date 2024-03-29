@@ -3,6 +3,7 @@ import os from "os";
 import { Router } from "express";
 import UserRoutes from "./user.routes";
 import AuthRoutes from "./auth.routes";
+import PetRoutes from "./pet.routes";
 const router: Router = Router();
 
 router.get("/", (req, res, next) => {
@@ -27,5 +28,6 @@ router.use("/health", (req, res, next) =>
 
 router.use("/users", UserRoutes);
 router.use("/auth", AuthRoutes);
+router.use("/pets", PetRoutes);
 
 export default router;
