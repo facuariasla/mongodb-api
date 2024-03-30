@@ -3,7 +3,7 @@ import { User } from "../../core/models/user.model";
 import { GenericError } from "../../infraestructure/error.model";
 import { UserService } from "../../core/services/user.service";
 
-export class UserController{
+export class UserController {
   public static async create(
     req: Request,
     res: Response,
@@ -11,7 +11,13 @@ export class UserController{
   ): Promise<void> {
     try {
       const body: User = req.body;
-      if (!body.email || !body.name || !body.surname || !body.password)
+      if (
+        !body.email ||
+        !body.name ||
+        !body.surname ||
+        !body.password ||
+        !body.role
+      )
         throw GenericError.REQUIRED_DATA;
       const data = await UserService.create(body);
       res.status(201).json({ status: "ok", data });
@@ -81,5 +87,4 @@ export class UserController{
       next(error);
     }
   }
-
 }

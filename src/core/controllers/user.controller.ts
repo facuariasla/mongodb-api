@@ -10,9 +10,10 @@ export class UserController {
     next: NextFunction
   ): Promise<void> {
     try {
-      const body: User = req.body;
+      let body: User = req.body;
       if (!body.email || !body.name || !body.surname || !body.password)
         throw GenericError.REQUIRED_DATA;
+      body.role = "subscriber";
       const data = await UserService.create(body);
       res.status(201).json({ status: "ok", data });
     } catch (error) {

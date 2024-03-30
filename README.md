@@ -41,9 +41,10 @@ This API requires authentication using a Bearer token for each request. You shou
 | POST | url/api/v1/users | To create a new user |
 | POST | url/api/v1/auth/login | To login an existing user account |
 | GET | url/api/v1/users/myprofile | To get user profile |
-| PUT | url/api/v1/users/profile/:userId | To update/edit your profile user |
-| GET | url/api/v1/pets/mypets | To get all pets |
+| PUT | url/api/v1/users/:userId | To update/edit your profile user |
+
 | POST | url/api/v1/pets | To create a new pet, associated to your account (user) |
+| GET | url/api/v1/pets | To get all pets |
 | PUT | url/api/v1/pets/:petId | To update/edit a single pet |
 
 

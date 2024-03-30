@@ -6,7 +6,7 @@ const router: Router = Router();
 //! subscriber routes
 router.post("/", UserController.create);
 router.put(
-  "/profile/:userId",
+  "/:userId",
   AuthenticationMiddleware.allowIfLoggedIn,
   AuthenticationMiddleware.grantAccess("user", "update"),
   UserController.updateMyProfile

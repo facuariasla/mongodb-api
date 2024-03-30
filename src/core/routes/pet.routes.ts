@@ -6,14 +6,14 @@ const router: Router = Router();
 
 // ! subscribers routes:
 router.post(
-  "/mypets",
+  "/",
   AuthenticationMiddleware.allowIfLoggedIn,
   AuthenticationMiddleware.grantAccess("pet", "create"),
   PetController.createOwn
 );
 
 router.get(
-  "/mypets/all",
+  "/",
   AuthenticationMiddleware.allowIfLoggedIn,
   AuthenticationMiddleware.grantAccess("pet", "read"),
   PetController.allMyPets

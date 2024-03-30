@@ -28,7 +28,6 @@ export class UserService {
       ...data,
       name: data.name.trim(),
       surname: data.surname.trim(),
-      role: "subscriber",
       email,
       createdAt: now,
       updatedAt: now,
