@@ -2,10 +2,11 @@ import "dotenv/config";
 import express, { Application } from "express";
 import morgan from "morgan";
 import { mongoDbConnection } from "./database/mongodb/mongo";
-import CoreRoutes from "../core/routes/index.routes";
 import { ServerConfigurations } from "../middleware/server.configuration.middleware";
 import { AuthenticationMiddleware } from "../middleware/authentication.middleware";
 import cors from "cors";
+import CoreRoutes from "../core/routes/index.routes";
+import AdminRoutes from "../admin/routes/index.routes";
 
 export class Server {
   public app: Application;
@@ -40,6 +41,7 @@ export class Server {
     app.use(express.urlencoded({ limit: "20mb", extended: true }));
 
     app.use(morgan("dev"));
+    app.use("/admin/api/v1", AdminRoutes);
     app.use("/api/v1", CoreRoutes);
     app.use(ServerConfigurations.handleErrorMiddelware);
   }

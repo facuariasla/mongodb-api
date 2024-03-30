@@ -39,7 +39,7 @@ export class GenericError extends Error {
     message: "Unauthorized",
     httpCode: 401,
     internalCode: 2,
-    description: "Unauthorized. Ensure your credentials are correct.",
+    description: "Unauthorized. You don't have permission to access this resource.",
 
   });
   static TOKEN_ERROR = new GenericError({
