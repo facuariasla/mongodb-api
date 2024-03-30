@@ -7,7 +7,7 @@ const router: Router = Router();
 
 router.get("/", (req, res, next) => {
   res.json({
-    status: "API V1",
+    status: "Admin API Pets",
     version: "v1",
   });
 });

@@ -8,7 +8,7 @@ const router: Router = Router();
 
 router.get("/", (req, res, next) => {
   res.json({
-    status: "API V1",
+    status: "API Pets",
     version: "v1",
   });
 });
