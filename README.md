@@ -5,6 +5,18 @@ Challenge.
 * admin_url: `https://mongodb-api-w05f.onrender.com/admin/api/v1`
 * url: `https://mongodb-api-w05f.onrender.com/api/v1`
 
+### TESTS ACCOUNTS
+admin: 
+```json
+{
+    "email": "fac.ariasl@gmail.com",
+    "password": "12345678",
+},
+{
+    "email": "john.doe@email.com",
+    "password": "12345678",
+}
+```
 ### Project Support Features
 * Users can signup and login to their accounts
 * Public (non-authenticated) users can access all causes on the platform
@@ -20,7 +32,7 @@ Challenge.
 * Connect to the API using Postman on port 3001.
 ## Authentication
 
-This API requires authentication using a Bearer token for each request. You should include the token in the Authorization header as follows:
+This API requires authentication using a Bearer token for each request (token value from login response). You should include the token in the Authorization header as follows:
 `Authorization: Bearer <your_token_here>`
 ### API Endpoints (admin)
 | HTTP Verbs | Endpoints | Action | Query |
