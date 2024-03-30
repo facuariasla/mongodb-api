@@ -9,6 +9,12 @@ router.get(
   AuthenticationMiddleware.grantAccess("user", "readAny"),
   UserController.getAll
 );
+router.post(
+  "/",
+  AuthenticationMiddleware.allowIfLoggedIn,
+  AuthenticationMiddleware.grantAccess("user", "createAny"),
+  UserController.create
+);
 router.put(
   "/:userId",
   AuthenticationMiddleware.allowIfLoggedIn,
