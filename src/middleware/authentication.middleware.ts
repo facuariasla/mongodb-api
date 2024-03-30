@@ -5,8 +5,8 @@ import jwt from "jsonwebtoken";
 
 const roleAccess:any = {
   admin: {
-    user: ['createAny', 'readAny', 'updateAny', 'deleteAny'],
-    pet: ['createAny', 'readAny', 'updateAny', 'deleteAny'],
+    user: ['createAny', 'readAny', 'updateAny', 'deleteAny', 'create', 'read', 'update', 'delete'],
+    pet: ['createAny', 'readAny', 'updateAny', 'deleteAny', 'create', 'read', 'update', 'delete'],
   },
   subscriber: {
     user: ['read', 'update'],
