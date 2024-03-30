@@ -23,28 +23,27 @@ Challenge.
 This API requires authentication using a Bearer token for each request. You should include the token in the Authorization header as follows:
 `Authorization: Bearer <your_token_here>`
 ### API Endpoints (admin)
-| HTTP Verbs | Endpoints | Action |
-| --- | --- | --- |
+| HTTP Verbs | Endpoints | Action | Query |
+| --- | --- | --- | --- |
 | POST | admin_url/api/v1/auth/login | To login an existing user account |
-| GET | admin_url/api/v1/users | To get all users |
+| GET | admin_url/api/v1/users | To get all users | page=1&limit=10&order=asc&orderBy=name&search=surname
 | POST | admin_url/api/v1/users | To create a new user |
 | PUT | admin_url/api/v1/users/:userId | To update/edit a user |
 | DELETE | admin_url/api/v1/users/:userId | To delete a user |
-
-| GET | admin_url/api/v1/pets | To get all pets |
+| GET | admin_url/api/v1/pets | To get all pets | page=1&limit=10&order=asc&orderBy=breed&search=name
 | POST | admin_url/api/v1/pets | To create a new pet, associated to your account (user) |
 | PUT | admin_url/api/v1/pets/:petId | To update/edit a pet |
 | DELETE | admin_url/api/v1/pets/:petId | To delete a pet |
+
 ### API Endpoints (subscriber)
-| HTTP Verbs | Endpoints | Action |
-| --- | --- | --- |
+| HTTP Verbs | Endpoints | Action | Query |
+| --- | --- | --- | --- |
 | POST | url/api/v1/users | To create a new user |
 | POST | url/api/v1/auth/login | To login an existing user account |
-| GET | url/api/v1/users/myprofile | To get user profile |
+| GET | url/api/v1/users/myprofile | To get user profile 
 | PUT | url/api/v1/users/:userId | To update/edit your profile user |
-
 | POST | url/api/v1/pets | To create a new pet, associated to your account (user) |
-| GET | url/api/v1/pets | To get all pets |
+| GET | url/api/v1/pets | To get all user pets |
 | PUT | url/api/v1/pets/:petId | To update/edit a single pet |
 
 
